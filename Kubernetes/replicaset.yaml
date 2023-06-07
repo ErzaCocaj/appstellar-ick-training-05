@@ -8,7 +8,7 @@ metadata:
     tier: frontend
 spec:
   # modify replicas according to your case
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       tier: frontend
@@ -22,3 +22,4 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
+      
