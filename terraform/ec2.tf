@@ -8,7 +8,7 @@ network_interface {
   }
 
   tags = {
-    Name = "Erza-$(var.environment)"
+    Name = "Erza-${var.environment}"
   }
 }
 
