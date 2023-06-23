@@ -1,0 +1,2 @@
+access_key= "AKIAUR6LRUFA43Y327GT"
+secret_key="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"
