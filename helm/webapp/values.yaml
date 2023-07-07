@@ -1,3 +1,13 @@
 namespace: webapp-erza
 configMapName: db-configmap
 secretName: db-secret
+replicaCount: 2
+image:
+  repository: erzacocaj/web
+  pullPolicy: Always
+  tag: "1"
+  containerPort: 3000
+service:
+  type: ClusterIP
+  port: 80
+hostname: appstellarick.com
