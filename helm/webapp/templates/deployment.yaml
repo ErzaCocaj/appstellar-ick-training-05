@@ -15,8 +15,8 @@ spec:
         app: web-server
     spec:
       containers:
-      - name: web-server
-        image: my-nextwebserver:1
+      - name: next-js
+        image: 313422618945.dkr.ecr.eu-central-1.amazonaws.com/erza-ick-training:dev
         imagePullPolicy: IfNotPresent
         ports: 
           - containerPort: 3000
