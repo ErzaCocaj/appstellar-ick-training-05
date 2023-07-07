@@ -38,8 +38,9 @@ jobs:
          curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
          chmod 700 get_helm.sh
          ./get_helm.sh
+
       - name: Setup kube-config
         run: aws eks update-kubeconfig --name=my-eks-cluster --region=eu-central-1
 
       - name: Deploy Helm Chart
-        run: helm upgrade webapp-erza ../helm/webapp --install
+        run: helm upgrade webapp-erza ./helm/webapp --install
