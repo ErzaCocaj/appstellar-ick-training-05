@@ -10,4 +10,4 @@ image:
 service:
   type: ClusterIP
   port: 80
-hostname: appstellarick.com
+hostname: erza-appstellar.training
