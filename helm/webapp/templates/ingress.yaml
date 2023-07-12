@@ -7,6 +7,8 @@ metadata:
     alb.ingress.kubernetes.io/group.name: common-alb
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:eu-central-1:313422618945:certificate/d2e3f539-c29e-42d7-bab0-efd470e50615
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
 spec:
   ingressClassName: alb
   rules:
