@@ -18,3 +18,11 @@ output "vpc_id" {
   value       = data.aws_vpc.this.id
 
 }
+
+module "s3_bucket" {
+
+    source= "./modules/s3"
+    bucket_name= aws_s3_bucket.example.bucket
+    file_key= "my-first-bucket-file"
+    file_source= "./this-is-my-file.txt"
+}
