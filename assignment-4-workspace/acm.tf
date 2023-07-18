@@ -1,4 +1,4 @@
-data "aws_route53_zone" "this" {
+data "aws_route53_zone" "zone" {
   name=local.domain
 
 }
@@ -13,7 +13,7 @@ module "acm" {
   version = "~> 4.0"
 
   domain_name  = "erza-assignment-4.${local.domain}"
-  zone_id      = data.aws_route53_zone.this.id
+  zone_id      = data.aws_route53_zone.zone.id
 
 
   wait_for_validation = true
