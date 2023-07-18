@@ -1,5 +1,18 @@
+data "aws_vpc" "this" {
+    tags= {
+        Environment= "dev"
+    }
+
+}
+
+output "vpc_id" {
+  value       = data.aws_vpc.this.id
+
+}
+
 data "aws_route53_zone" "zone" {
   name=local.domain
+  vpc_id=output.vpc_id
 
 }
 
