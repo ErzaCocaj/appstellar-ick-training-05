@@ -5,14 +5,9 @@ data "aws_vpc" "this" {
 
 }
 
-output "vpc_id" {
-  value       = data.aws_vpc.this.id
-
-}
-
 data "aws_route53_zone" "zone" {
   name=local.domain
-  vpc_id=output.vpc_id
+  vpc_id=data.aws_vpc.this.id
 
 }
 
