@@ -1,3 +1,6 @@
+locals {
+  s3_origin_id = "myS3Origin"
+  }
 resource "aws_cloudfront_distribution" "s3_distribution" {
   origin {
     domain_name              = aws_s3_bucket.static_website.bucket_regional_domain_name
@@ -30,10 +33,16 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     default_ttl            = 3600
     max_ttl                = 86400
   }
-
+  
+  restrictions {
+    geo_restriction {
+      restriction_type = "whitelist"
+      locations        = ["US", "CA", "GB", "DE"]
+    }
+  }
   price_class = "PriceClass_100" # Change this to your desired price class
   viewer_certificate {
-    acm_certificate_arn = aws_acm_certificate.this.arn
+    acm_certificate_arn = module.acm.acm_certificate_arn
     ssl_support_method  = "sni-only"
   }
   

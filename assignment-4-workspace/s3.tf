@@ -5,11 +5,6 @@ resource "aws_s3_bucket" "static_website" {
     Environment = "Dev"
   }
 
-  locals {
-  s3_origin_id = "myS3Origin"
-  }
-
-
 }
 
 resource "aws_s3_bucket_website_configuration" "website" {
