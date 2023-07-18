@@ -1,13 +1,6 @@
-data "aws_vpc" "this" {
-    tags= {
-        Environment= "dev"
-    }
-
-}
-
 data "aws_route53_zone" "zone" {
   name=local.domain
-  vpc_id=data.aws_vpc.this.id
+ 
 
 }
 
