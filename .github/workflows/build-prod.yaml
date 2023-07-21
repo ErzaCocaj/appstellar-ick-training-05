@@ -1,6 +1,5 @@
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
 name: build-push-ecr
 jobs:
   build-push-ecr:
