@@ -12,3 +12,4 @@ module "web_client_record" {
       records = [module.web_client_cdn.cloudfront_distribution_domain_name]
     }
   ]
+}
